@@ -1,0 +1,223 @@
+/* Reset basic elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f6f6f6;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* ==========================================================================
+   Header Layout
+   ========================================================================== */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: calc(100vw - 60px); /* Leaves spacing room for the right sidebar frame */
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    background-color: #ffffff;
+    z-index: 10;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #111111;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #555555;
+    font-weight: 500;
+    margin: 0 18px;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover, 
+.nav-links a.active {
+    color: #111111;
+}
+
+.header-icons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.icon {
+    font-size: 1.2rem;
+    cursor: pointer;
+    position: relative;
+}
+
+.bag-icon {
+    display: flex;
+    align-items: center;
+}
+
+.badge {
+    position: absolute;
+    top: -5px;
+    right: -8px;
+    background-color: #ec5564;
+    color: white;
+    font-size: 0.65rem;
+    padding: 2px 5px;
+    border-radius: 50%;
+}
+
+/* ==========================================================================
+   Right Side Panel Strip Layout
+   ========================================================================== */
+.side-info-bar {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 60px;
+    height: 100vh;
+    background-color: #ffffff;
+    border-left: 1px solid #f0f0f0;
+    z-index: 15;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.02);
+}
+
+/* Rotate items vertically to run up and down the side axis */
+.meta-selectors, .promo-strip {
+    transform: rotate(90deg);
+    transform-origin: center center;
+    white-space: nowrap;
+}
+
+.meta-selectors {
+    display: flex;
+    gap: 20px;
+    font-size: 0.8rem;
+    color: #777777;
+    margin-top: 60px;
+}
+
+.promo-strip {
+    font-size: 0.8rem;
+    color: #444444;
+    margin-bottom: 180px;
+}
+
+.promo-strip a {
+    color: #ec5564;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* ==========================================================================
+   Hero Split Main Layout
+   ========================================================================== */
+.hero-container {
+    display: flex;
+    width: calc(100vw - 60px);
+    height: 100vh;
+    padding-top: 90px; /* Shifts below the fixed modern navigation bar header */
+}
+
+.content-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 10%;
+}
+
+.main-heading {
+    font-size: clamp(2.5rem, 4.5vw, 4rem);
+    font-weight: 700;
+    color: #111111;
+    line-height: 1.15;
+    margin-bottom: 20px;
+}
+
+.promo-text {
+    font-size: 1.1rem;
+    color: #666666;
+    margin-bottom: 40px;
+}
+
+.shop-btn {
+    display: inline-block;
+    padding: 14px 38px;
+    background-color: #ec5564;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s ease;
+}
+
+.shop-btn:hover {
+    background-color: #d44352;
+}
+
+.image-side {
+    flex: 1;
+    background-image: url('https://unsplash.com');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* ==========================================================================
+   Responsive Adjustments
+   ========================================================================== */
+@media (max-width: 992px) {
+    .main-header {
+        width: 100vw;
+    }
+    .side-info-bar {
+        display: none; /* Hides complex side menu elements on medium-to-small display windows */
+    }
+    .hero-container {
+        width: 100vw;
+        flex-direction: column;
+    }
+    .content-side {
+        padding: 60px 20px;
+        align-items: center;
+        text-align: center;
+    }
+    .image-side {
+        height: 50vh;
+        width: 100%;
+    }
+}
+.image-side {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; 
+    background-image: none; 
+    background-color: #f6f6f6; 
+}
+
+.model-image {
+    height: 90%; 
+    width: auto;
+    object-fit: contain;
+}
